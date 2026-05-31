@@ -5,14 +5,15 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaReportConsumer {
+public class RecommendationReportConsumer {
 
     @KafkaListener(
             topics = "report.generated",
-            groupId = "report-group"
+            groupId = "recommendation-group"
     )
-    public void consume1(ReportGeneratedEvent event) {
-        System.out.println("Modify report: " + event.getReportId());
+    public void consumeForRecommendation(ReportGeneratedEvent event) {
+        System.out.println("RecommendationConsumer - Generating recommendations for user: " + event.getUserId());
+        
     }
 
 }

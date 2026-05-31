@@ -5,14 +5,14 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaReportConsumer {
+public class EmailReportConsumer {
 
     @KafkaListener(
             topics = "report.generated",
-            groupId = "report-group"
+            groupId = "email-group"
     )
-    public void consume1(ReportGeneratedEvent event) {
-        System.out.println("Modify report: " + event.getReportId());
+    public void consumeForEmail(ReportGeneratedEvent event) {
+        System.out.println("EmailConsumer - Sending email to user: " + event.getUserId());
     }
 
 }
