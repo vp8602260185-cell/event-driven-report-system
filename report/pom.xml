@@ -33,6 +33,12 @@
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
+		<!-- Jackson Databind required by JsonSerializer/JsonDeserializer -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
 	    <!-- Spring Data JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
