@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KafkaConfig {
 
-
     @Bean
     public NewTopic reportGeneratedTopic() {
         return TopicBuilder.name("report.generated")

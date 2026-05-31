@@ -11,8 +11,9 @@ public class KafkaReportConsumer {
             topics = "report.generated",
             groupId = "report-group"
     )
-    public void consume(ReportGeneratedEvent event) {
-
+    public void consume1(ReportGeneratedEvent event) {
+        System.out.println("Sending Mail : " + event.getReportId());
         System.out.println("Event Consumed : " + event.getReportId());
     }
+
 }
